@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3D-ISAT 3D Instance Segmentation Annotation Tool</title>
+
+    <link href="isat.css" rel="stylesheet">
+    <script src="canvas.min.js"></script>
+    <script src="jszip.min.js"></script>
+    <script src="filesaver.min.js"></script>
+
+    <script src="isat.js"></script>
+</head>
+<body>
+    <div class="left" id="left">
+        <label for="images">Images:</label>
+        <br />
+        <input type="file" id="images" name="images[]" accept="image/jpeg, image/png" multiple />
+        <br />
+        <label for="imageList"></label>
+        <select name="imageList" id="imageList" size="10" multiple></select>
+
+        <hr />
+
+        <label for="classes">Classes:</label>
+        <br />
+        <button id="generateClass" disabled="true">Generate Class</button>
+        <button id="eraser">Eraser ON</button>
+        <button id="fillMode" disabled>Fill ON</button>
+        <br />
+        <span id="currentIdShow">ID: 0 (Eraser)</span>
+        <br />
+        <label for="classList"></label>
+        <select name="classList" id="classList" size="10" multiple></select>
+        
+        <label for="adjust">Line Width for Draw</label>
+        <span id="lineWidthValue">5</span>[px]
+        <br/>
+        1[px]
+        <input type="range" id="lineWidth" min="1" max="20" step="1" value="10" style="width: calc(100% - 150px);"/>
+        20[px]
+
+        <hr />
+        
+        <label for="masks">Segmentation Maks:</label>
+        <br />
+        <input type="file" id="loadMasks" accept=".txt" disabled multiple />
+        <select name="masksList" id="masksList" size="10" multiple></select>
+        <button id="saveSegmentationMasks" disabled="true">Save Segmentations</button>
+
+    </div>
+
+    <div class="right" id="right">
+        <canvas id="canvas"></canvas>
+    </div>
+</body>
+</html>
