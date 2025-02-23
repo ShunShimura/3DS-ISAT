@@ -1,0 +1,16 @@
+*.txt
+
+*/.txt
+
+*.jpg
+*.jpeg
+*.png
+
+*/*.jpg
+*/*.jpeg
+*/*.png
+
+.DS_Store
+
+*/.DS_Store
+
